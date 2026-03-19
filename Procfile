@@ -1,1 +1,1 @@
-release: python core/manage.py migrate && gunicorn --bind 0.0.0.0:$PORT --chdir core core.wsgi
+web: python core/manage.py migrate && gunicorn --bind 0.0.0.0:$PORT --chdir core core.wsgi
