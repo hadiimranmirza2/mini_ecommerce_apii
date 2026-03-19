@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend # Needs pip install django-filter
 from rest_framework.filters import SearchFilter
 
-from core.api.models import Category, Product, Order
-from core.api.serializers import CategorySerializer, ProductSerializer, OrderSerializer
+from api.models import Category, Product, Order
+from api.serializers import CategorySerializer, ProductSerializer, OrderSerializer
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
