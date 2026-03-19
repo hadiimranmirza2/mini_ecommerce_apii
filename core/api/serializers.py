@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Product, Order, OrderItem
+from core.api.models import Category, Product, Order, OrderItem
 
 
 
