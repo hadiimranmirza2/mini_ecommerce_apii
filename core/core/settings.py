@@ -29,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://p01--changeable-zinc--lgxmlk747n46.code.run']
+
 
 # Application definition
 
