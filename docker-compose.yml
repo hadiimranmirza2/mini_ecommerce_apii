@@ -1,0 +1,32 @@
+
+
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=ecommerce_db
+      - POSTGRES_USER=mhi
+      - POSTGRES_PASSWORD=12345678
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    # We tell it to look for manage.py inside the core folder
+    command: python core/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_DB=ecommerce_db
+      - POSTGRES_USER=mhi
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_HOST=db
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
